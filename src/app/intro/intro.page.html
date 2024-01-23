@@ -1,0 +1,37 @@
+<!-- intro.page.html -->
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Intro - Ventajas de Ionic
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+
+  <swiper-container [loop]="true" [pagination]="true">
+    <swiper-slide *ngFor="let slide of slides">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="red-title">{{slide.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="{{slide.class}}">
+          {{slide.description}}
+          <img [src]="slide.image" />
+        </ion-card-content>
+        <ion-card-footer>
+          <p [innerHTML]="slide.help_text"></p>
+        </ion-card-footer>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" routerLink="/home">
+      Home
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
